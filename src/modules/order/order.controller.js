@@ -33,19 +33,15 @@ export const createOrder = asyncHandler(async (req, res, next) => {
         const isProduct = productInOrder.products.find((prod) => {
             return prod.productId.toString() == productId.toString()
         })
-        if (checkProduct.inStock(quantity)) {
-            isProduct.quantity = isProduct.quantity + quantity
-            isProduct.price = isProduct.quantity * checkProduct.price
-            const { totalAmount, totalPrice } = calculateTotals(productInOrder.products)
-            productInOrder.totalAmount = totalAmount
-            productInOrder.totalPrice = totalPrice
-            productInOrder.orderDate = new Date()
-            await productInOrder.save()
-            updateStock(productId, quantity, true)
-            return res.status(200).json({ message: "Done", productInOrder })
-        }
-        return next(new Error(`only ${checkProduct.stock} Items are Available`, { cause: 400 }))
-
+        isProduct.quantity = isProduct.quantity + quantity
+        isProduct.price = isProduct.quantity * checkProduct.price
+        const { totalAmount, totalPrice } = calculateTotals(productInOrder.products)
+        productInOrder.totalAmount = totalAmount
+        productInOrder.totalPrice = totalPrice
+        productInOrder.orderDate = new Date()
+        await productInOrder.save()
+        updateStock(productId, quantity, true)
+        return res.status(200).json({ message: "Done", productInOrder })
     }
     // add new product to existing order
     const addToExistOrder = await orderModel.findOneAndUpdate({ customerId },

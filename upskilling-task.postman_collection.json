@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "debb40da-d7cc-42af-a0aa-9ded557b5a6f",
+		"name": "upskilling-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32953184"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"washing machine\",\r\n    \"description\" : \"excellent washing\",\r\n    \"price\" : 22000,\r\n    \"stock\" : 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/product/",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\" : \"gentle washing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/product/6689cfd95630ef675834606e",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								"6689cfd95630ef675834606e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/product/66889f79c52017541c490262",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								"66889f79c52017541c490262"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/product/",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSpecificProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/product/66889ea568027040cf7e629b",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								"66889ea568027040cf7e629b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\" : \"66889e4868027040cf7e6296\",\r\n    \"quantity\" : 1,\r\n    \"customerId\" : \"6689375f999780221d6a51ce\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/order/",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\" : \"66889e4868027040cf7e6296\",\r\n    \"quantity\" : 2 \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/order/66894bfb419637a7f253bc7c",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"order",
+								"66894bfb419637a7f253bc7c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/order/668979b6d9ef40e292fe68b5",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"order",
+								"668979b6d9ef40e292fe68b5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/order/",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSpecificOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/order/66897b46fcc45313072a5bc3",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"order",
+								"66897b46fcc45313072a5bc3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"ahmed hussam\", \r\n    \"email\" : \"ahmedhussam28@gmail.com\", \r\n    \"password\" : \"12345\", \r\n    \"phone\" : \"010123823152\", \r\n    \"address\" : \"cairo\" , \r\n    \"age\" : 29\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://upskilling-task.vercel.app/customer/signup",
+							"protocol": "https",
+							"host": [
+								"upskilling-task",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"customer",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
